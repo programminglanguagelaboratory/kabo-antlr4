@@ -40,11 +40,11 @@ blockParagraph
   ;
 
 blockReference
-  : '[[[' .+? ']]]'
+  : '[[' .+? ']]'
   ;
 
 blockRaw
-  : '```' .+? '```'
+  : '``' .+? '``'
   ;
 
 inline
@@ -58,27 +58,27 @@ inline
   ;
 
 inlineReference
-  : '[[' .*? ']]'
+  : '[' .*? ']'
   ;
 
 inlineBold
-  : '**' inline* '**'
+  : '*' inline* '*'
   ;
 
 inlineItalic
-  : '//' inline* '//'
+  : '/' inline* '/'
   ;
 
 inlineUnderline
-  : '__' inline* '__'
+  : '_' inline* '_'
   ;
 
 inlineStrikeout
-  : '--' inline* '--'
+  : '-' inline* '-'
   ;
 
 inlineRaw
-  : '``' .*? '``'
+  : '`' .*? '`'
   ;
 
 inlinePlain
