@@ -25,6 +25,7 @@ document
 block
   : blockHeader NEWLINE
   | blockParagraph NEWLINE
+  | blockReference NEWLINE
   ;
 
 blockHeader
@@ -35,6 +36,10 @@ blockHeader
 
 blockParagraph
   : inline (SPACE+ inline)*
+  ;
+
+blockReference
+  : '[[[' .+? ']]]'
   ;
 
 inline
