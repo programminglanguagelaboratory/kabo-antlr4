@@ -26,6 +26,7 @@ block
   : blockHeader NEWLINE
   | blockParagraph NEWLINE
   | blockReference NEWLINE
+  | blockRaw NEWLINE
   ;
 
 blockHeader
@@ -40,6 +41,10 @@ blockParagraph
 
 blockReference
   : '[[[' .+? ']]]'
+  ;
+
+blockRaw
+  : '```' .+? '```'
   ;
 
 inline
